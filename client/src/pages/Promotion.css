@@ -1,0 +1,55 @@
+/* Promotion.css */
+
+.promotion-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .slider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .slider {
+    width: 100%;
+    margin: 20px 0;
+  }
+  
+  .selected-value {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #333;
+  }
+  
+  .labels {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .label {
+    text-align: center;
+    flex: 1;
+    font-weight: normal;
+  }
+  
+  .label.active {
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+  @media (max-width: 768px) {
+    .slider {
+      width: 90%;
+    }
+    
+    .labels {
+      width: 90%;
+    }
+  }
+  

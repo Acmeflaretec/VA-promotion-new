@@ -1,0 +1,29 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "va-promotion-server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Acmeflaretec/VA-promotion.git"
+  },
+  "author": "Shahil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Acmeflaretec/VA-promotion/issues"
+  },
+  "homepage": "https://github.com/Acmeflaretec/VA-promotion#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.3",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.1.4"
+  }
+}
