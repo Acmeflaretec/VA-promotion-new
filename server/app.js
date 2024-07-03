@@ -9,7 +9,7 @@ const app = express();
 app.use(bodyParser.json());
 // app.use(cors());
 const corsOptions = {
-  origin: ['http://localhost:3000','http://localhost:5173'], // This is the origin of the request (your React frontend URL)
+  origin: ['https://va-promotion.netlify.app','https://va-promotion-admin.netlify.app'], // This is the origin of the request (your React frontend URL)
   credentials: true, // Indicates whether or not the response to the request can be exposed when the credentials flag is true
 };   
 
