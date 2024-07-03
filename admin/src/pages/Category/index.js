@@ -6,7 +6,6 @@ import TableData from "./tableData";
 
 function Category() {
   const { data, isLoading } = useGetCategory({ pageNo: 1, pageCount: 100 });
-  console.log(data, isLoading);
   return (
     <PageLayout
       title={'Category'}

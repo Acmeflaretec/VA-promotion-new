@@ -5,6 +5,7 @@ import frontImage from '../assets/MainLogo.png';
 import backImage from '../assets/logowtext.png';
 import { Link } from 'react-router-dom';
 
+
 function NavBar() {
   return (
     <Navbar expand="lg" className="p-1 bg-primary-subtle">
