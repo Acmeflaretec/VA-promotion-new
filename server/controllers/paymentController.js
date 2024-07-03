@@ -60,7 +60,7 @@ const getPayment = async (req, res) => {
   const limit = parseInt(req.query.limit) || 10;
 
   try {
-      const payment = await Payment.find()
+      const payment = await Payment.find().sort({ createdAt: -1 })
           .skip((page - 1) * limit)
           .limit(limit)
           .exec();
@@ -75,7 +75,7 @@ const getChannel = async (req, res) => {
   const limit = parseInt(req.query.limit) || 10;
 
   try {
-      const payment = await Payment.find({type: 'channel'})
+      const payment = await Payment.find({type: 'channel'}).sort({ createdAt: -1 })
           .skip((page - 1) * limit)
           .limit(limit)
           .exec();
@@ -90,7 +90,7 @@ const getVideo = async (req, res) => {
   const limit = parseInt(req.query.limit) || 10;
 
   try {
-      const payment = await Payment.find({type: 'video'})
+      const payment = await Payment.find({type: 'video'}).sort({ createdAt: -1 })
           .skip((page - 1) * limit)
           .limit(limit)
           .exec();
@@ -106,7 +106,7 @@ const getIsActiveVideo = async (req, res) => {
   const limit = parseInt(req.query.limit) || 10;
 
   try {
-    const payment = await Payment.find({ type: 'video', isActive: true })
+    const payment = await Payment.find({ type: 'video', isActive: true }).sort({ createdAt: -1 })
       .skip((page - 1) * limit)
       .limit(limit)
       .exec();

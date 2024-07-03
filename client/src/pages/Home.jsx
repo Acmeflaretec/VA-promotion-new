@@ -14,7 +14,7 @@ function Home() {
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/payment/video`);
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/payment/isactivevideo`);
         setVideos(response.data.data);
       } catch (error) {
         console.error("Failed to fetch videos", error);

@@ -46,7 +46,22 @@ const getAds = async (req, res) => {
   const limit = parseInt(req.query.limit) || 10;
 
   try {
-      const ads = await Ads.find()
+      const ads = await Ads.find().sort({ createdAt: -1 })
+          .skip((page - 1) * limit)
+          .limit(limit)
+          .exec();
+
+      res.json({ data: ads });
+  } catch (error) {
+      res.status(400).json({ error: error.message });
+  }
+};
+const getIsActiveAds = async (req, res) => {
+  const page = parseInt(req.query.page) || 1;
+  const limit = parseInt(req.query.limit) || 10;
+
+  try {
+      const ads = await Ads.find({status: true }).sort({ createdAt: -1 })
           .skip((page - 1) * limit)
           .limit(limit)
           .exec();
@@ -96,5 +111,6 @@ module.exports ={
   getAds,
   deleteAdsById,
   getAdsById,
+  getIsActiveAds
   
 }
