@@ -3,29 +3,33 @@ import NavBar from "../components/Navbar";
 import { Col, Row } from "react-bootstrap";
 import Personaladd from "../components/Personaladd";
 import { Link } from "react-router-dom";
+import "./menu.css";
 
 function MenuPage() {
   return (
     <div>
       <NavBar />
+      <div className="banner1">
+        {/* <h1 className="banner-text">Welcome to Our Platform!</h1> */}
+      </div>
       <div className="container mt-5 ">
         <Row>
-          <Col md={12}>
+          {/* <Col md={12}>
             <div className="float-end">
               <div className="btn btn-danger rounded-circle p-3 mb-5 ">
                 channel <br /> profile
               </div>
             </div>
-          </Col>
+          </Col> */}
           <Col>
             <div className="d-flex flex-column flex-md-row justify-content-around">
             <Link to={'/promotion'}>
-                  <button className="btn btn-secondary rounded-pill p-3 mb-3 col-12 col-md-auto">
+                  <button className="btn btn-secondary rounded-pill p-3 px-5 mb-3 col-12 col-md-auto">
                     Get Channel Promotion
                   </button>
             </Link>
             <Link to={'/vidiopromotion'}>
-              <button className="btn btn-secondary rounded-pill p-3 mb-3 col-12 col-md-auto">
+              <button className="btn btn-secondary rounded-pill p-3 mb-3 px-5 col-12 col-md-auto">
                 Get Video Promotion
               </button>
               </Link>
@@ -41,6 +45,7 @@ function MenuPage() {
                     type="checkbox"
                     value=""
                     id=""
+                    disabled
                   />
                   <label class="form-check-label" for="">
                     {" "}

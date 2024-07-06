@@ -4,13 +4,15 @@ const cors = require('cors');
 const router = require('./routes/index.js');
 const morgan = require('morgan');
 const path = require('path')
+const dotenv = require('dotenv');
+dotenv.config();
 
 const app = express();
 app.use(bodyParser.json());
 // app.use(cors());
 const corsOptions = {
-  origin: ['https://va-promotion.netlify.app','https://va-promotion-admin.netlify.app'], // This is the origin of the request (your React frontend URL)
-  credentials: true, // Indicates whether or not the response to the request can be exposed when the credentials flag is true
+  origin: [process.env.CLIENT_PORT_LOCAL,process.env.ADMIN_PORT_LOCAL],
+  credentials: true,    
 };   
 
 app.use(cors(corsOptions));

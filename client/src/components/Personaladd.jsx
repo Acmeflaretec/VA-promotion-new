@@ -19,7 +19,7 @@ function Personaladd() {
   }, []);
 
   return (
-    <Grid container spacing={3}>
+    <Grid container spacing={3}mb={10} mt={5} >
       {ads.map(ad => (
         <Grid item xs={12} md={4} key={ad._id} >
           <Card style={{textAlign:'center'}}>
@@ -34,12 +34,12 @@ function Personaladd() {
               <Typography gutterBottom variant="h5" component="div">
                 {ad.title}
               </Typography>
-              <Typography variant="subtitle1" color="text.secondary">
+              {/* <Typography variant="subtitle1" color="text.secondary">
                 {ad.subtitle}
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 {ad.description}
-              </Typography>
+              </Typography> */}
             </CardContent>
           </Card>
         </Grid>

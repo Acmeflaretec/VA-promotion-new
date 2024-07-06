@@ -64,7 +64,7 @@ const Popup = ({ onClose, selectedAmount,type}) => {
       <DialogTitle>Payment Method</DialogTitle>
       <DialogContent dividers style={{ maxHeight: '400px' }}>
       <div style={{  textAlign: 'center'}}>
-        <p>"Scan this QR and make payment. Then fill and submit the below given now."</p>
+        <p>"Scan this QR and make payment. Then fill the form."</p>
           <img src={qrCode} alt="Payment QR Code" style={{ width: '100%', height: 'auto' }} />
         </div>
         <hr />
@@ -124,6 +124,7 @@ const Popup = ({ onClose, selectedAmount,type}) => {
             helperText={formik.touched.location && formik.errors.location}
             margin="normal"
           />
+          <strong>Upload the Screenshots of Payment</strong>
           <input
             id="paymentimage"
             name="paymentimage"
