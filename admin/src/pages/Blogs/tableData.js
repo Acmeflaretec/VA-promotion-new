@@ -133,7 +133,7 @@ const TableData = () => {
         {item?.description}
       </Typography>
     ),
-    image: <Blogs image={`${process.env.REACT_APP_API_URL}/uploads/${item?.image}`} />,
+    image: <Blogs image={`${process.env.REACT_APP_API_URL}/uploads/${item?.image}`} name={item?.title} />,
     status: (
       <Badge variant="gradient" badgeContent={item?.status ? 'Active' : 'Blocked'} color={item?.status ? "success" : 'secondary'} size="xs" container />
     ),
