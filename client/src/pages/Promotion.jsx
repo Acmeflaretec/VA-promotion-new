@@ -108,7 +108,9 @@ function Promotion() {
             disabled={!isChecked}
           >
             Proceed to Payment
+
           </button>
+          {/* //ldkjfk */}
         </div>
         <div className="mt-5">
           <Personaladd />
