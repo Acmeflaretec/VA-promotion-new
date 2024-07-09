@@ -1,5 +1,3 @@
-
-
 import React, { useState } from 'react';
 import './Promotion.css';
 import Personaladd from '../components/Personaladd';
@@ -15,76 +13,75 @@ function Videopromotion() {
     { label: '5k', amount: 1899 },
   ];
 
-  const [selectedOption, setSelectedOption] = useState(options[0].amount);
+  const [selectedOption, setSelectedOption] = useState(options[0]);
   const [openPopup, setOpenPopup] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
 
   const handleSliderChange = (event) => {
-    const newValue = Number(event.target.value);
-    setSelectedOption(newValue);
+    const sliderValue = Number(event.target.value);
+    const index = Math.round((sliderValue / 100) * (options.length - 1));
+    setSelectedOption(options[index]);
   };
 
-  const getLabel = (amount) => {
-    const option = options.find(opt => opt.amount === amount);
-    return option ? option.label : '';
+  const handleLabelClick = (option) => {
+    setSelectedOption(option);
   };
 
-  const getAmount = (label) => {
-    const option = options.find(opt => opt.label === label);
-    return option ? option.amount : '';
-  };
+  const handleOpenPopup = () => setOpenPopup(true);
+  const handleClosePopup = () => setOpenPopup(false);
+  const handleCheckboxChange = (e) => setIsChecked(e.target.checked);
 
-  const handleOpenPopup = () => {
-    setOpenPopup(true);
-  };
-
-  const handleClosePopup = () => {
-    setOpenPopup(false);
-  };
-
-  const handleCheckboxChange = (e) => {
-    setIsChecked(e.target.checked);
+  const getSliderValue = () => {
+    return (options.findIndex(opt => opt.amount === selectedOption.amount) / (options.length - 1)) * 100;
   };
 
   return (
     <div>
       <NavBar />
       <div className='container'>
-        <div className='text-center d-flex justify-content-center mt-3'> 
-          <h3 className='bg-warning p-4 w-50'>Video Promotion</h3>
+        <div className='text-center mt-4 mb-5'> 
+          <h2 className='promotion-title'>Video Promotion</h2>
         </div>
-        <div className="promotion-container mt-5">
-          <div className="slider-container">
-            <input
-              type="range"
-              min={options[0].amount}
-              max={options[options.length - 1].amount}
-              step="300"
-              value={selectedOption}
-              onChange={handleSliderChange}
-              className="slider"
-              list="tickmarks"
-            />
-            <datalist id="tickmarks">
-              {options.map(option => (
-                <option key={option.amount} value={option.amount} label={option.label}></option>
-              ))}
-            </datalist>
-            <div className="selected-value">Amount: {selectedOption}</div>
-            <div className="labels">
-              {options.map((option) => (
-                <div key={option.amount} className={`label ${selectedOption === option.amount ? 'active' : ''}`}>
-                  {option.label}
-                </div>
-              ))}
+        <div className="promotion-container">
+          <div className="package-selector">
+            <h3 className="section-title">Select Your Promotion Package</h3>
+            <div className="slider-container">
+              <input
+                type="range"
+                min={0}
+                max={100}
+                step={1}
+                value={getSliderValue()}
+                onChange={handleSliderChange}
+                className="slider"
+              />
+              <div className="slider-labels">
+                {options.map((option, index) => (
+                  <div 
+                    key={option.label} 
+                    className={`slider-label ${selectedOption.amount === option.amount ? 'active' : ''}`}
+                    onClick={() => handleLabelClick(option)}
+                  >
+                    {option.label}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="selected-package">
+            <div className="package-info">
+              <span className="package-label">Selected Package:</span>
+              <span className="package-value">{selectedOption.label}</span>
+            </div>
+            <div className="amount-display">
+              <span className="currency">₹</span>
+              <span className="amount">{selectedOption.amount}</span>
             </div>
           </div>
         </div>
-        <div className="mt-5">
-          <div className="text-center">
-            <h2>Promotional Policy</h2>
-          </div>
-          <div className="d-flex justify-content-center">
+        <div className="policy-section mt-4">
+          <div className="policy-header">
+            <h3 className="section-title">Promotional Policy</h3>
             <div className="form-check">
               <input
                 className="form-check-input"
@@ -92,30 +89,34 @@ function Videopromotion() {
                 id="policyCheckbox"
                 onChange={handleCheckboxChange}
               />
-              <a href="https://docs.google.com/document/d/1n9iSk6hLj2vg4-XHx8qBuny_nKcd0sNIJuCMq4IWVWY/edit?usp=drivesdk">
-                <label className="form-check-label" htmlFor="policyCheckbox">
-                  Agreed with policy
-                </label>
-              </a>
+              <label className="form-check-label" htmlFor="policyCheckbox">
+                I agree to the promotional policy
+              </label>
             </div>
           </div>
+          <a href="https://docs.google.com/document/d/1n9iSk6hLj2vg4-XHx8qBuny_nKcd0sNIJuCMq4IWVWY/edit?usp=drivesdk" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             className="policy-link">
+            View full policy
+          </a>
         </div>
-        <div className='d-flex justify-content-center'>
-          <button
-            className='btn btn-secondary mt-5'
-            onClick={handleOpenPopup}
+        <div className='text-center mt-4'>
+          <button 
+            className='btn btn-primary btn-lg proceed-button' 
+            onClick={handleOpenPopup} 
             disabled={!isChecked}
           >
-            Payment Method
+            Proceed to Payment
           </button>
         </div>
-        <div>
+        <div className="mt-5">
           <Personaladd />
         </div>
       </div>
-      {openPopup && <Popup onClose={handleClosePopup} selectedAmount={selectedOption} type={'video'} />}
+      {openPopup && <Popup onClose={handleClosePopup} selectedAmount={selectedOption.amount} type={'video'}/>}
     </div>
   );
 }
-
-export default Videopromotion;
+      
+export default Videopromotion;
