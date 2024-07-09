@@ -4,6 +4,7 @@ import Products from "pages/Products";
 import Orders from "pages/Orders";
 import Banner from "pages/Banner";
 import Blogs from "pages/Blogs";
+import Review from "pages/review";
 // import Settings from "pages/Settings";
 // import Billing from "layouts/billing";
 // import Profile from "layouts/profile";
@@ -57,6 +58,14 @@ const routes = [
     route: "/ads",
     icon: <Box component="i" color="primary" fontSize="14px" className="ni ni-book-bookmark" />,
     component: <Blogs />,
+  },
+  {
+    type: "route",
+    name: "review",
+    key: "ads",
+    route: "/review",
+    icon: <Box component="i" color="dark" fontSize="14px" className="ni ni-single-02" />,
+    component: <Review />,
   },
   // {
   //   type: "route",

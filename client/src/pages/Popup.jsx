@@ -52,7 +52,7 @@ const Popup = ({ onClose, selectedAmount,type}) => {
 
   useEffect(() => {
     const fetchQrCode = async (amount) => {
-      const qrCodeUrl = `/src/assets/${amount}.png`; 
+      const qrCodeUrl = `/src/assets/${amount}.jpg`;
       setQrCode(qrCodeUrl);
     };
 
@@ -106,7 +106,7 @@ const Popup = ({ onClose, selectedAmount,type}) => {
             fullWidth
             id="url"
             name="url"
-            label={type==='channel'?"Your Channel URL":"Your Channel URL"}
+            label={type==='channel'?"Your Channel URL":"Your Video URL"}
             value={formik.values.url}
             onChange={formik.handleChange}
             error={formik.touched.url && Boolean(formik.errors.url)}

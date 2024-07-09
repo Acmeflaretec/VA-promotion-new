@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import './Navbar.css';
-import frontImage from '../assets/MainLogo.png';
-import backImage from '../assets/logowtext.png';
+import frontImage from '../assets/logo.png';
+import backImage from '../assets/logo.png';
 import { Link } from 'react-router-dom';
 
 

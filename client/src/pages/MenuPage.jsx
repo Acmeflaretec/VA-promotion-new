@@ -4,14 +4,14 @@ import { Col, Row } from "react-bootstrap";
 import Personaladd from "../components/Personaladd";
 import { Link } from "react-router-dom";
 import "./menu.css";
+import Footer from '../components/Footer';
 
 function MenuPage() {
   return (
     <div>
       <NavBar />
-      <div className="banner1">
-        {/* <h1 className="banner-text">Welcome to Our Platform!</h1> */}
-      </div>
+      {/* <div className="banner1">
+      </div> */}
       <div className="container mt-5 ">
         <Row>
           {/* <Col md={12}>
@@ -34,7 +34,7 @@ function MenuPage() {
               </button>
               </Link>
             </div>
-            <div className="mt-5">
+            {/* <div className="mt-5">
               <div className="text-center">
                 <h2> Promotional Policy</h2>
               </div>
@@ -54,13 +54,14 @@ function MenuPage() {
                   
                 </div>
               </div>
-            </div>
+            </div> */}
           </Col>
         </Row>
         <div>
           <Personaladd />
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

@@ -6,15 +6,16 @@ import Popup from './Popup';
 
 function Promotion() {
   const options = [
-    { label: '1k', amount: 299 },
-    { label: '2k', amount: 599 },
-    { label: '3k', amount: 899 },
-    { label: '4k', amount: 1199 },
-    { label: '5k', amount: 1499 },
+    { label: '1k', amount: 700 },
+    { label: '2k', amount: 1300 },
+    { label: '3k', amount: 1900 },
+    { label: '4k', amount: 2500 },
+    { label: '5k', amount: 3000 },
   ];
 
   const [selectedOption, setSelectedOption] = useState(options[0].amount);
   const [openPopup, setOpenPopup] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
 
   const handleSliderChange = (event) => {
     const newValue = Number(event.target.value);
@@ -37,6 +38,9 @@ function Promotion() {
 
   const handleClosePopup = () => {
     setOpenPopup(false);
+  };
+  const handleCheckboxChange = (e) => {
+    setIsChecked(e.target.checked);
   };
 
   return (
@@ -73,8 +77,28 @@ function Promotion() {
             </div>
           </div>
         </div>
+        <div className="mt-5">
+          <div className="text-center">
+            <h2>Promotional Policy</h2>
+          </div>
+          <div className="d-flex justify-content-center">
+            <div className="form-check">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                id="policyCheckbox"
+                onChange={handleCheckboxChange}
+              />
+              <a href="https://docs.google.com/document/d/1n9iSk6hLj2vg4-XHx8qBuny_nKcd0sNIJuCMq4IWVWY/edit?usp=drivesdk">
+                <label className="form-check-label" htmlFor="policyCheckbox">
+                  Agreed with policy
+                </label>
+              </a>
+            </div>
+          </div>
+        </div>
         <div className='d-flex justify-content-center'>
-          <button className='btn btn-secondary mt-5' onClick={handleOpenPopup}>Payment Method</button>
+          <button className='btn btn-secondary mt-5' onClick={handleOpenPopup} disabled={!isChecked}>Payment Method</button>
         </div>
         <div>
           <Personaladd />

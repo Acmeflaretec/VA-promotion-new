@@ -29,6 +29,7 @@ import AddBanner from "pages/Banner/AddBanner";
 import AddBlog from "pages/Blogs/AddBlog";
 import EditBanner from "pages/Banner/EditBanner";
 import EditBlog from "pages/Blogs/EditBlog";
+import EditReview from "pages/review/EditReview";
 
 export default function App() {
   const [controller, dispatch] = useController();
@@ -109,6 +110,7 @@ export default function App() {
                 <Route path="/products/addProducts" element={<AddProduct />} />
                 <Route path="/products/editProduct/:id" element={<EditProduct />} />
                 <Route path="/orders/editOrder/:id" element={<EditOrder />} />
+                <Route path="/review/editReview/:id" element={<EditReview />} />
                 <Route path="/ads/addAds" element={<AddBlog />} />
                 <Route path="/ads/editAds/:id" element={<EditBlog />} />
                 <Route path="*" element={<Navigate to="/dashboard" />} />
@@ -141,6 +143,7 @@ export default function App() {
               <Route path="/ads/addAds" element={<AddBlog />} />
               <Route path="/products/editProduct/:id" element={<EditProduct />} />
               <Route path="/orders/editOrder/:id" element={<EditOrder />} />
+              <Route path="/review/editReview/:id" element={<EditReview />} />
               <Route path="/banners/editBanner/:id" element={<EditBanner />} />
               <Route path="/ads/editAds/:id" element={<EditBlog />} />
               <Route path="*" element={<Navigate to="/dashboard" />} />
