@@ -61,8 +61,8 @@ const routes = [
   },
   {
     type: "route",
-    name: "review",
-    key: "ads",
+    name: "Review",
+    key: "review",
     route: "/review",
     icon: <Box component="i" color="dark" fontSize="14px" className="ni ni-single-02" />,
     component: <Review />,

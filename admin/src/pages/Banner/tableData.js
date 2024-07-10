@@ -40,7 +40,7 @@ const TableData = () => {
     ),
     url: (
       <Typography variant="caption" color="secondary" fontWeight="medium">
-        <a href={item?.url}>{item?.url}</a>
+        <a href={item?.url}>{item?.url?.substring(0, 30)}</a>
       </Typography>
     ),
     type: (

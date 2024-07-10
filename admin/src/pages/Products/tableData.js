@@ -62,7 +62,7 @@ const TableData = () => {
     ),
     url: (
       <Typography variant="caption" color="secondary" fontWeight="medium">
-        <a href={item?.url}>{item?.url}</a>
+        <a href={item?.url}>{item?.url?.substring(0, 30)}</a>
       </Typography>
     ),
     paymentimage: <Author image={`${process.env.REACT_APP_API_URL}/uploads/${item?.image?.[0]}`}/>,
