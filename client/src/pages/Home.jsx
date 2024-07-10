@@ -113,9 +113,9 @@ function Home() {
           <Card className="carousel-container">
           <Carousel className="mb-3">
             {reviews.map((review, index) => (
-              <Box key={index} className="text-center p-4" style={{minHeight: '200px'}} >
+              <Box key={index} className="text-center p-4" >
                 <Box>
-                  <Typography variant="body1" className="text-center mb-3" style={{ overflowWrap: 'anywhere' }}>"{review.review}"</Typography>
+                  <Typography variant="body1" className="text-center mb-3" style={{ overflowWrap: 'anywhere',minHeight: '50px' }}>"{review.review}"</Typography>
                   <Typography variant="body1" className="text-center"><strong>{review.name}</strong> </Typography>
                   <Typography variant="body2" className="text-center">{review.profession}</Typography>
                   <div style={{display:'flex',justifyContent:'center'}} > 

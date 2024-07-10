@@ -54,7 +54,7 @@ const TableData = () => {
     ),
     review: (
       <Typography variant="caption" color="secondary" fontWeight="medium">
-        {item?.review}
+        {item?.review?.substring(0, 50)}
       </Typography>
     ),
     rating: (
