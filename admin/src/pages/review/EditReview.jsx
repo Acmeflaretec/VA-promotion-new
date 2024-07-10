@@ -79,7 +79,7 @@ const EditReview = () => {
             <Grid container spacing={2} maxWidth={600} py={5}>
             <Grid item xs={12} sm={6}>
                   <Typography variant="caption">
-                     Change approved &nbsp;
+                     Change Status &nbsp;
                   </Typography>
                   <ToggleButton
                      value={data?.approved}

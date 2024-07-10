@@ -34,7 +34,7 @@ const TableData = () => {
     { name: "profession", align: "center" },
     { name: "review", align: "center" },
     { name: "rating", align: "center" },
-    { name: "approved", align: "center" },
+    { name: "status", align: "center" },
     { name: "action", align: "center" },
   ]
 
@@ -64,7 +64,7 @@ const TableData = () => {
     ),
 
     
-    approved: (
+    status: (
       <Badge variant="gradient" badgeContent={item?.approved ? 'approved' : 'not-approved'} color={item?.approved ? "success" : 'secondary'} size="xs" container />
     ),
     

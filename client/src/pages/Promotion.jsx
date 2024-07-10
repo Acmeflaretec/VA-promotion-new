@@ -39,12 +39,12 @@ function Promotion() {
     <div>
       <NavBar />
       <div className='container'>
-        <div className='text-center mt-4 mb-5'> 
+        <div className='text-center mt-4 mb-5'>
           <h2 className='promotion-title'>Channel Promotion</h2>
         </div>
         <div className="promotion-container">
           <div className="package-selector">
-            <h3 className="section-title">Select Your Promotion Package</h3>
+            <h3 className="section-title">Select The Number of subscribers</h3>
             <div className="slider-container">
               <input
                 type="range"
@@ -57,8 +57,8 @@ function Promotion() {
               />
               <div className="slider-labels">
                 {options.map((option, index) => (
-                  <div 
-                    key={option.label} 
+                  <div
+                    key={option.label}
                     className={`slider-label ${selectedOption.amount === option.amount ? 'active' : ''}`}
                     onClick={() => handleLabelClick(option)}
                   >
@@ -81,42 +81,46 @@ function Promotion() {
         </div>
         <div className="policy-section mt-4">
           <div className="policy-header">
-            <h3 className="section-title">Promotional Policy</h3>
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                id="policyCheckbox"
-                onChange={handleCheckboxChange}
-              />
-              <label className="form-check-label" htmlFor="policyCheckbox">
-                I agree to the promotional policy
-              </label>
+
+
+            <div>
+              <h3 className="section-title">Promotional Policy</h3>
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  id="policyCheckbox"
+                  onChange={handleCheckboxChange}
+                />
+                <label className="form-check-label" htmlFor="policyCheckbox">
+                  I agree to the promotional policy
+                </label>
+              </div>
+              <a href="https://docs.google.com/document/d/1n9iSk6hLj2vg4-XHx8qBuny_nKcd0sNIJuCMq4IWVWY/edit?usp=drivesdk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="policy-link">
+                View full policy
+              </a>
+            </div>
+
+            <div className='text-center mt-4'>
+              <button
+                className='btn btn-primary btn-lg proceed-button'
+                onClick={handleOpenPopup}
+                disabled={!isChecked}
+              >
+                Proceed to Payment
+
+              </button>
             </div>
           </div>
-          <a href="https://docs.google.com/document/d/1n9iSk6hLj2vg4-XHx8qBuny_nKcd0sNIJuCMq4IWVWY/edit?usp=drivesdk" 
-             target="_blank" 
-             rel="noopener noreferrer"
-             className="policy-link">
-            View full policy
-          </a>
-        </div>
-        <div className='text-center mt-4'>
-          <button 
-            className='btn btn-primary btn-lg proceed-button' 
-            onClick={handleOpenPopup} 
-            disabled={!isChecked}
-          >
-            Proceed to Payment
-
-          </button>
-          {/* //ldkjfk */}
         </div>
         <div className="mt-5">
           <Personaladd />
         </div>
       </div>
-      {openPopup && <Popup onClose={handleClosePopup} selectedAmount={selectedOption.amount} type={'channel'}/>}
+      {openPopup && <Popup onClose={handleClosePopup} selectedAmount={selectedOption.amount} type={'channel'} />}
     </div>
   );
 }

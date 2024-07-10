@@ -11,7 +11,7 @@ import Footer from '../components/Footer';
 import Review from "../components/Review";  // Import Review component
 import { Button, Container } from "@mui/material";
 import Carousel from "react-material-ui-carousel";  // Import Carousel component
-import { Paper, Typography, Box, Rating } from "@mui/material";  // Import Paper and Typography components
+import { Paper, Typography, Box, Rating,Card } from "@mui/material";  // Import Paper and Typography components
 
 function Home() {
   const [videos, setVideos] = useState([]);
@@ -107,13 +107,15 @@ function Home() {
         </div>
 
         {/* Carousel for Reviews */}
+
         <Container className="mt-5">
           <Typography variant="h4" className="text-center mb-4"><strong> User Reviews</strong></Typography>
-          <Carousel>
+          <Card className="carousel-container">
+          <Carousel className="mb-3">
             {reviews.map((review, index) => (
-              <Paper key={index} className="p-4" style={{ display: 'flex', justifyContent: 'center' }}>
+              <Box key={index} className="text-center p-4" style={{minHeight: '200px'}} >
                 <Box>
-                  <Typography variant="body1" className="text-center" style={{ overflowWrap: 'anywhere' }}>"{review.review}"</Typography>
+                  <Typography variant="body1" className="text-center mb-3" style={{ overflowWrap: 'anywhere' }}>"{review.review}"</Typography>
                   <Typography variant="body1" className="text-center"><strong>{review.name}</strong> </Typography>
                   <Typography variant="body2" className="text-center">{review.profession}</Typography>
                   <div style={{display:'flex',justifyContent:'center'}} > 
@@ -123,9 +125,10 @@ function Home() {
                   />
                   </div>
                 </Box>
-              </Paper>
+              </Box>
             ))}
           </Carousel>
+          </Card>
         </Container>
       </div>
 

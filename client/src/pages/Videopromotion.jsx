@@ -44,7 +44,7 @@ function Videopromotion() {
         </div>
         <div className="promotion-container">
           <div className="package-selector">
-            <h3 className="section-title">Select Your Promotion Package</h3>
+            <h3 className="section-title">Select The Number of Views</h3>
             <div className="slider-container">
               <input
                 type="range"
@@ -81,34 +81,40 @@ function Videopromotion() {
         </div>
         <div className="policy-section mt-4">
           <div className="policy-header">
-            <h3 className="section-title">Promotional Policy</h3>
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                id="policyCheckbox"
-                onChange={handleCheckboxChange}
-              />
-              <label className="form-check-label" htmlFor="policyCheckbox">
-                I agree to the promotional policy
-              </label>
+
+
+            <div>
+              <h3 className="section-title">Promotional Policy</h3>
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  id="policyCheckbox"
+                  onChange={handleCheckboxChange}
+                />
+                <label className="form-check-label" htmlFor="policyCheckbox">
+                  I agree to the promotional policy
+                </label>
+              </div>
+              <a href="https://docs.google.com/document/d/1n9iSk6hLj2vg4-XHx8qBuny_nKcd0sNIJuCMq4IWVWY/edit?usp=drivesdk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="policy-link">
+                View full policy
+              </a>
+            </div>
+
+            <div className='text-center mt-4'>
+              <button
+                className='btn btn-primary btn-lg proceed-button'
+                onClick={handleOpenPopup}
+                disabled={!isChecked}
+              >
+                Proceed to Payment
+
+              </button>
             </div>
           </div>
-          <a href="https://docs.google.com/document/d/1n9iSk6hLj2vg4-XHx8qBuny_nKcd0sNIJuCMq4IWVWY/edit?usp=drivesdk" 
-             target="_blank" 
-             rel="noopener noreferrer"
-             className="policy-link">
-            View full policy
-          </a>
-        </div>
-        <div className='text-center mt-4'>
-          <button 
-            className='btn btn-primary btn-lg proceed-button' 
-            onClick={handleOpenPopup} 
-            disabled={!isChecked}
-          >
-            Proceed to Payment
-          </button>
         </div>
         <div className="mt-5">
           <Personaladd />
