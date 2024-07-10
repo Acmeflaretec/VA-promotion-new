@@ -11,11 +11,11 @@ const Review = ({ open, handleClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await axios.post(`${import.meta.env.VITE_BACKEND_URL}/reviews`, { name, profession, review, rating }); 
-    handleClose();  
     setName('');
     setProfession('');
     setReview('');
     setRating(0);
+    handleClose();  
   };
 
   return (
