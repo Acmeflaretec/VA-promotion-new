@@ -7,7 +7,7 @@ import toast from 'react-hot-toast';
 import Table from "examples/Tables/Table";
 import { useGetReview } from "queries/ProductQuery";
 import { Link } from "react-router-dom";
-import { Icon } from "@mui/material";
+import { Icon,Tooltip } from "@mui/material";
 
 function Author({ image, name}) {
   return (
