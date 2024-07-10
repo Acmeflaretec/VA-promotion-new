@@ -53,9 +53,11 @@ const TableData = () => {
       </Typography>
     ),
     review: (
+      <Tooltip title={item?.review} arrow>
       <Typography variant="caption" color="secondary" fontWeight="medium">
         {item?.review?.substring(0, 50)}
       </Typography>
+      </Tooltip>
     ),
     rating: (
       <Typography variant="caption" color="secondary" fontWeight="medium">

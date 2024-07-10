@@ -51,8 +51,8 @@ const TableData = () => {
     ),
     description: (
       <Tooltip title={item?.description} arrow>
-        <Typography variant="caption" color="secondary" fontWeight="medium" className="description-column">
-          {item?.description}
+        <Typography variant="caption" color="secondary" fontWeight="medium">
+          {item?.description?.substring(0, 50)}
         </Typography>
       </Tooltip>
     ),
