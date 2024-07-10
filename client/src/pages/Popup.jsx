@@ -52,7 +52,7 @@ const Popup = ({ onClose, selectedAmount,type}) => {
 
   useEffect(() => {
     const fetchQrCode = async (amount) => {
-      const qrCodeUrl = `/src/assets/${amount}.jpg`;
+      const qrCodeUrl = `../src/assets/${amount}.jpg`;
       setQrCode(qrCodeUrl);
     };
 
